@@ -1,0 +1,23 @@
+@server= http://localhost:4000/messages
+
+### GET all messages
+GET {{server}}/
+
+### GET all unread messages
+GET {{server}}/unread
+### GET all unread messages count
+GET {{server}}/unread/count
+### GET single message
+GET {{server}}/single/61afa48113581e4ec903b7a2
+### DELETE all messages
+DELETE {{server}}/single/61afa48113581e4ec903b7a2
+### MARK message as read
+PATCH {{server}}/read/61afa540e4904e98ae753125
+### CREATE a message
+POST {{server}}/create
+Content-Type: application/json
+
+{
+	"subject": "Message 4",
+	"body": "Some message body that wil truncate at 30 characters on frontend"
+}
